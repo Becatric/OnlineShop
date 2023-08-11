@@ -1,7 +1,7 @@
 package com.project.OnlineShop.Service;
 
 import com.project.OnlineShop.DAO.UserDAO;
-import com.project.OnlineShop.DAO.UserDAOImpl;
+import com.project.OnlineShop.DAO.UserRepository;
 import com.project.OnlineShop.Entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,13 +10,15 @@ import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService{
-
+    UserRepository userRepository;
     UserDAO userDAO;
     UserServiceImpl(){}
 
     @Autowired
-    UserServiceImpl(UserDAO userDAO){ this.userDAO=userDAO;}
-
+    void UsersServiceImpl(UserRepository userRepository,UserDAO userDAO) {
+        this.userRepository = userRepository;
+        this.userDAO=userDAO;
+    }
    // @Override
     public User createUser(User user)
     { return userDAO.create(user);}
@@ -26,14 +28,13 @@ public class UserServiceImpl implements UserService{
     }
 
     public User findById(int id){
-        return userDAO.findById(id);
-
+        return userRepository.findById(id).get();
     }
 
     public List<User>findAll(){
-        List<User>temp=userDAO.findAll();
-        return temp;
+        return userRepository.findAll();
     }
+
     public User findByUsername(String username){
         return userDAO.findByUsername(username);
 

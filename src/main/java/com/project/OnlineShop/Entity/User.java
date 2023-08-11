@@ -1,63 +1,60 @@
 package com.project.OnlineShop.Entity;
 
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "user")
-public class User {
+public class User extends PublicUser{
 
-   @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private int id;
-
-   @Column(name = "username")
-   private String username;
-
-   @Column(name = "password")
-   private String password;
-
-   @Enumerated(EnumType.STRING)
-   @Column(name = "role")
-   private Role role;
-
-   public User(){};
-    public User(String username, String password, Role role) {
-        this.username = username;
-        this.password = password;
-        this.role = role;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
+    private String password;
+    @CreatedDate
+    @Column(name = "createdAt")
+    private int createdAt;
+    @LastModifiedDate
+    @Column(name = "updatedAt")
+    private int updatedAt;
 
     public String getPassword() {
         return password;
     }
-
     public void setPassword(String password) {
         this.password = password;
     }
 
-    public Role getRole() {
-        return role;
+    public int getCreatedAt() {
+        return createdAt;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setCreatedAt(int createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public User getUser(){
-        return new User(this.username,this.password, this.role);
+    public int getUpdatedAt() {
+        return updatedAt;
     }
+
+    public void setUpdatedAt(int updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public User() {
+    }
+
+    public User(String firstName, String lastName, String email, String password, Role role) {
+        this.id = 0;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.role = Role.User;
+    }
+
+    public PublicUser getPublicUser() {
+        return new PublicUser(this.id, this.firstName, this.lastName, this.email, this.role);
+    }
+
 }
 

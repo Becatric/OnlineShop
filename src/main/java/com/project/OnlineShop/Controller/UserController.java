@@ -1,5 +1,6 @@
 package com.project.OnlineShop.Controller;
 
+import com.project.OnlineShop.Entity.PublicUser;
 import com.project.OnlineShop.Entity.User;
 import com.project.OnlineShop.Service.UserService;
 import org.springframework.http.ResponseEntity;
@@ -19,18 +20,18 @@ public class UserController {
     UserController(UserService userService){ this.userService=userService;}
 
     @GetMapping("{id}")
-    ResponseEntity<User> GetUser(@PathVariable int id)
+    ResponseEntity<PublicUser> GetUser(@PathVariable int id)
     {
-        return ResponseEntity.ok(userService.findById(id).getUser());
+        return ResponseEntity.ok(userService.findById(id).getPublicUser());
 
     }
 
     @GetMapping
-    ResponseEntity<List<User>> GetUsers()
+    ResponseEntity<List<PublicUser>> GetUsers()
     {
         List<User> users= userService.findAll();
         //not finished I think
-
-        return ResponseEntity.ok(users);
+        List<PublicUser> publicUsers= users.stream().map(User::getPublicUser).toList();
+        return ResponseEntity.ok(publicUsers);
     }
 }

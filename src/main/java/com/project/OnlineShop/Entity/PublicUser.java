@@ -4,13 +4,12 @@ import com.project.OnlineShop.Entity.Role;
 import jakarta.persistence.*;
 
 @MappedSuperclass
-public class PublicUser {
-    @Id
-    @GeneratedValue
-    protected int id;
-    @Column(name = "first_name")
+public class PublicUser {    @Id
+@GeneratedValue
+protected int id;
+    @Column(name = "firstName")
     protected String firstName;
-    @Column(name = "last_name")
+    @Column(name = "lastName")
     protected String lastName;
     protected String email;
     @Enumerated(EnumType.STRING)

@@ -60,3 +60,4 @@ public class User {
         return new User(this.username,this.password, this.role);
     }
 }
+

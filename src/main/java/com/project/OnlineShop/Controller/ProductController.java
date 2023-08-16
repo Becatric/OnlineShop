@@ -27,6 +27,11 @@ public class ProductController {
         return ResponseEntity.ok(productService.findAll());
     }
 
+    @GetMapping("{name}")
+    ResponseEntity<Product> findByName(@PathVariable String name){
+        return ResponseEntity.ok(productService.findByName(name).get(0));
+    }
+
     @DeleteMapping("{id}")
     ResponseEntity delete(@PathVariable int id){
         productService.deleteProduct(id);

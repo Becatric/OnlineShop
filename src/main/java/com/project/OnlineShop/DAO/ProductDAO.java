@@ -4,10 +4,8 @@ import com.project.OnlineShop.Entity.Product;
 import java.util.List;
 public interface ProductDAO {
 
-    //CRUD
-
     Product create(Product theProduct);
-    Product findByCode(Integer code);
+
     Product findById(Integer id);
 
     List<Product>findAll();

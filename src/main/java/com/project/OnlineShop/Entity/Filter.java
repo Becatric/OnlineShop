@@ -11,40 +11,40 @@ public class Filter {
     private int id;
 
     @Column(name = "mobilier")
-    private boolean mobilier;
+    private int mobilier;
     @Column(name = "CorpIluminat")
-    private boolean CorpIluminat;
+    private int CorpIluminat;
     @Column(name = "Covoare")
-    private boolean Covoare;
+    private int Covoare;
     @Column(name = "Animalute")
-    private boolean Animalute;
+    private int Animalute;
     @Column(name = "Utilitare")
-    private boolean Utilitare;
+    private int Utilitare;
     @Column(name = "Dormitor")
-    private boolean Dormitor;
+    private int Dormitor;
     @Column(name = "Living")
-    private boolean Living;
+    private int Living;
     @Column(name = "Bucatarie")
-    private boolean Bucatarie;
+    private int Bucatarie;
     @Column(name = "Baie")
-    private boolean Baie;
+    private int Baie;
     @Column(name = "Gradina")
-    private boolean Gradina;
+    private int Gradina;
     @Column(name = "Negru")
-    private boolean Negru;
+    private int Negru;
     @Column(name = "Alb")
-    private boolean Alb;
+    private int Alb;
     @Column(name = "Multicolor")
-    private boolean Multicolor;
+    private int Multicolor;
     @Column(name = "Monocolor")
-    private boolean Monocolor;
+    private int Monocolor;
 
     @OneToOne
     @JoinColumn(name = "product_id")
     private Product product;
 
     public Filter(){};
-    public Filter(boolean mobilier, boolean corpIluminat, boolean covoare, boolean animalute, boolean utilitare, boolean dormitor, boolean living, boolean bucatarie, boolean baie, boolean gradina, boolean negru, boolean alb, boolean multicolor, boolean monocolor) {
+    public Filter(int mobilier, int corpIluminat, int covoare, int animalute, int utilitare, int dormitor, int living, int bucatarie, int baie, int gradina, int negru, int alb, int multicolor, int monocolor) {
         this.mobilier = mobilier;
         CorpIluminat = corpIluminat;
         Covoare = covoare;
@@ -65,59 +65,59 @@ public class Filter {
         return id;
     }
 
-    public boolean isMobilier() {
+    public int isMobilier() {
         return mobilier;
     }
 
-    public boolean isCorpIluminat() {
+    public int isCorpIluminat() {
         return CorpIluminat;
     }
 
-    public boolean isCovoare() {
+    public int isCovoare() {
         return Covoare;
     }
 
-    public boolean isAnimalute() {
+    public int isAnimalute() {
         return Animalute;
     }
 
-    public boolean isUtilitare() {
+    public int isUtilitare() {
         return Utilitare;
     }
 
-    public boolean isDormitor() {
+    public int isDormitor() {
         return Dormitor;
     }
 
-    public boolean isLiving() {
+    public int isLiving() {
         return Living;
     }
 
-    public boolean isBucatarie() {
+    public int isBucatarie() {
         return Bucatarie;
     }
 
-    public boolean isBaie() {
+    public int isBaie() {
         return Baie;
     }
 
-    public boolean isGradina() {
+    public int isGradina() {
         return Gradina;
     }
 
-    public boolean isNegru() {
+    public int isNegru() {
         return Negru;
     }
 
-    public boolean isAlb() {
+    public int isAlb() {
         return Alb;
     }
 
-    public boolean isMulticolor() {
+    public int isMulticolor() {
         return Multicolor;
     }
 
-    public boolean isMonocolor() {
+    public int isMonocolor() {
         return Monocolor;
     }
 
@@ -125,59 +125,59 @@ public class Filter {
         return product;
     }
 
-    public void setMobilier(boolean mobilier) {
+    public void setMobilier(int mobilier) {
         this.mobilier = mobilier;
     }
 
-    public void setCorpIluminat(boolean corpIluminat) {
+    public void setCorpIluminat(int corpIluminat) {
         CorpIluminat = corpIluminat;
     }
 
-    public void setCovoare(boolean covoare) {
+    public void setCovoare(int covoare) {
         Covoare = covoare;
     }
 
-    public void setAnimalute(boolean animalute) {
+    public void setAnimalute(int animalute) {
         Animalute = animalute;
     }
 
-    public void setUtilitare(boolean utilitare) {
+    public void setUtilitare(int utilitare) {
         Utilitare = utilitare;
     }
 
-    public void setDormitor(boolean dormitor) {
+    public void setDormitor(int dormitor) {
         Dormitor = dormitor;
     }
 
-    public void setLiving(boolean living) {
+    public void setLiving(int living) {
         Living = living;
     }
 
-    public void setBucatarie(boolean bucatarie) {
+    public void setBucatarie(int bucatarie) {
         Bucatarie = bucatarie;
     }
 
-    public void setBaie(boolean baie) {
+    public void setBaie(int baie) {
         Baie = baie;
     }
 
-    public void setGradina(boolean gradina) {
+    public void setGradina(int gradina) {
         Gradina = gradina;
     }
 
-    public void setNegru(boolean negru) {
+    public void setNegru(int negru) {
         Negru = negru;
     }
 
-    public void setAlb(boolean alb) {
+    public void setAlb(int alb) {
         Alb = alb;
     }
 
-    public void setMulticolor(boolean multicolor) {
+    public void setMulticolor(int multicolor) {
         Multicolor = multicolor;
     }
 
-    public void setMonocolor(boolean monocolor) {
+    public void setMonocolor(int monocolor) {
         Monocolor = monocolor;
     }
 

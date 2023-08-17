@@ -28,9 +28,6 @@ public class ProductDAOImpl implements ProductDAO{
     }
 
     @Override
-    public Product findByCode(Integer code){return entityManager.find(Product.class, code);}
-
-    @Override
     public List<Product> findAll(){
         TypedQuery<Product> theQuery=entityManager.createQuery("FROM Product ", Product.class);
 

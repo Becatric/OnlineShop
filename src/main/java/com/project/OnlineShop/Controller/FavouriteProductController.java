@@ -2,6 +2,7 @@ package com.project.OnlineShop.Controller;
 
 import com.project.OnlineShop.Entity.CartProducts;
 import com.project.OnlineShop.Entity.FavouriteProduct;
+import com.project.OnlineShop.Request.FavoriteProductRequest;
 import com.project.OnlineShop.Service.FavouriteProductService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +21,7 @@ public class FavouriteProductController {
     }
 
     @PostMapping
-    ResponseEntity<FavouriteProduct> saveProduct(@RequestBody FavouriteProduct favouriteProduct){
+    ResponseEntity<FavouriteProduct> saveProduct(@RequestBody FavoriteProductRequest favouriteProduct){
         return ResponseEntity.ok(favouriteProductService.createProduct(favouriteProduct));
     }
 

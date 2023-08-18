@@ -13,47 +13,45 @@ public class FavouriteProduct {
 
     @OneToOne
     @JoinColumn(name = "product_id")
-    private Product product_id;
+    private Product product;
 
     @ManyToOne
-    @Column(name = "user_id")
-    private User user_id;
+    @JoinColumn(name = "user_id")
+    private User user;
 
-    public FavouriteProduct(Product product_id, User user_id) {
-        this.product_id = product_id;
-        this.user_id = user_id;
+    public FavouriteProduct(Product product, User user) {
+        this.product = product;
+        this.user = user;
     }
 
-    public FavouriteProduct() {
-
-    }
+    public FavouriteProduct() {}
 
     public int getId() {
         return id;
     }
 
-    public Product getProduct_id() {
-        return product_id;
+    public Product getProduct() {
+        return product;
     }
 
-    public void setProduct_id(Product product_id) {
-        this.product_id = product_id;
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
-    public User getUser_id() {
-        return user_id;
+    public User getUser() {
+        return user;
     }
 
-    public void setUser_id(User user_id) {
-        this.user_id = user_id;
+    public void setUser(User user) {
+        this.user= user;
     }
 
     @Override
     public String toString() {
         return "FavouriteProduct{" +
                 "id=" + id +
-                ", product_id=" + product_id +
-                ", user_id=" + user_id +
+                ", product_id=" + product+
+                ", user_id=" + user +
                 '}';
     }
 }

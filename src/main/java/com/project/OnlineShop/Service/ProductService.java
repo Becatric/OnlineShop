@@ -8,6 +8,7 @@ public interface ProductService {
 
      Product createProduct(Product product);
     Product readProduct(int id);
+    Product findById(int id);
     List<Product> findAll();
     List<Product> findByName(String Name);
     List<Product> findByPrice(int price);
